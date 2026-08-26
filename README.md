@@ -1,4 +1,4 @@
-# Fisica-AC
+# Fisica-A
 Archivos de clase del curso Fisica-A, del departamento de Física - Universidad de los Andes
 
 ## Sesión interactiva en _MyBinder.org_
