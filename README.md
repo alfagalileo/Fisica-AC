@@ -9,4 +9,4 @@ Siga el link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.
 
 ### Problema del mono y el cazador
 
-[▶️ Ejecutar simulación](https://alfagalileo.github.io/Fisica-AC/Simulaciones/Problema_mono_%26_cazador/)
+[▶️ Ejecutar simulación](https://alfagalileo.github.io/Fisica-AC/Simulaciones/Problema_mono_%26_cazador/index.html)
