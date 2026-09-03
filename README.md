@@ -12,4 +12,5 @@ Siga el link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.
   [▶️ Ejecutar simulación](https://alfagalileo.github.io/Fisica-AC/Simulaciones/Problema_mono_%26_cazador/index.html)
 
 - ### Bloque moviendose sobre un plano inclinado con fricción
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alfagalileo/Fisica-AC/HEAD?urlpath=%2Fdoc%2Ftree%2F_Class5.ipynb)
   
