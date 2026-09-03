@@ -7,6 +7,9 @@ Siga el link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.
 
 ## Simulaciones
 
-### Problema del mono y el cazador
+- ### Problema del mono y el cazador
 
-[▶️ Ejecutar simulación](https://alfagalileo.github.io/Fisica-AC/Simulaciones/Problema_mono_%26_cazador/index.html)
+  [▶️ Ejecutar simulación](https://alfagalileo.github.io/Fisica-AC/Simulaciones/Problema_mono_%26_cazador/index.html)
+
+- ### Bloque moviendose sobre un plano inclinado con fricción
+  
