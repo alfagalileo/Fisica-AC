@@ -8,7 +8,8 @@ Siga el link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.
 ## Simulaciones
 - ### Problema del cohete y la roca
   [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alfagalileo/Fisica-AC/HEAD?urlpath=%2Fdoc%2Ftree%2FKinematics_Euler_integration.ipynb)
-
+- ### Proyectil con fricción
+  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alfagalileo/Fisica-AC/HEAD?urlpath=%2Fdoc%2Ftree%2FProjectil_friction.ipynb)
 - ### Bloque moviendose sobre un plano inclinado con fricción
   [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alfagalileo/Fisica-AC/HEAD?urlpath=%2Fdoc%2Ftree%2F_Clase5.ipynb)
   
