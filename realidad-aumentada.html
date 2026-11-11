@@ -12060,11 +12060,27 @@ function arButtons() {
 /** Enter the AR session: the scene's content goes into an anchor placed with a tap. */
 function arEnter(sc) {
   if (!sc || !sc.renderer || AR.session) return;
-  const T = THREE_LIB.THREE, r = sc.renderer;
-  navigator.xr.requestSession('immersive-ar', {
-    requiredFeatures: ['hit-test'], optionalFeatures: ['dom-overlay'], domOverlay: { root: AR.ui },
-  }).then(function (session) {
+  const r = sc.renderer;
+  AR.session = 'pending';
+  // Every feature optional, from the richest request to the barest: some phones (and browsers
+  // built on Chromium) answer NotSupportedError to a configuration Chrome itself accepts.
+  const configs = [
+    { optionalFeatures: ['local', 'hit-test', 'dom-overlay'], domOverlay: { root: AR.ui } },
+    { optionalFeatures: ['local', 'hit-test'] },
+    {},
+  ];
+  const errors = [];
+  const attempt = function (i) {
+    return navigator.xr.requestSession('immersive-ar', configs[i]).catch(function (e) {
+      errors.push((e && e.name ? e.name + ': ' : '') + (e && e.message ? e.message : e));
+      if (i + 1 < configs.length && !(e && e.name === 'SecurityError')) return attempt(i + 1);
+      throw new Error(errors.join(' | '));
+    });
+  };
+  attempt(0).then(function (session) {
     AR.session = session;
+    AR.features = Array.from(session.enabledFeatures || []);
+    if (errors.length) console.warn('asyslides: AR opened after', errors);
     r.xr.enabled = true;
     r.xr.setReferenceSpaceType('local');
     return r.xr.setSession(session).then(function () { return arSetup(sc, session); });
@@ -12103,6 +12119,7 @@ function arSetup(sc, session) {
   AR.ui.classList.add('asl-ar-live');
   let placed = false, hitSource = null;
   session.requestReferenceSpace('viewer').then(function (space) {
+    if (!session.requestHitTestSource) throw new Error('hit-test unavailable');
     return session.requestHitTestSource({ space: space });
   }).then(function (src) { hitSource = src; }).catch(function (e) {
     console.warn('asyslides: hit test', e);
